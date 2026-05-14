@@ -1,41 +1,40 @@
-
 # question 1.
 
-age = int(input('PLease enter your age: '))
+age = int(input("PLease enter your age: "))
 if 0 < age > 120:
-    print('Invalid')
+    print("Invalid")
 elif 0 < age < 12:
-    print('Child')
+    print("Child")
 elif 13 <= age < 17:
-    print('teen')
+    print("teen")
 else:
-    print('Adult')
+    print("Adult")
 
 # question 2.
 
 
-char = input('Enter a character: ').lower()
+char = input("Enter a character: ").lower()
 
-if char  not in 'abcdefghijklmnopqrstuvwxyz':
-    print('Consonant')
+if char not in "abcdefghijklmnopqrstuvwxyz":
+    print("Consonant")
 
-elif char in 'aeiou':
-    print('Vowel')
+elif char in "aeiou":
+    print("Vowel")
 
 else:
-    print('invalid')
+    print("invalid")
 
 # question 3.
 
-age = int(input('PLease enter your age: '))
-has_vip = input('VIP card (yes/no): ')
+age = int(input("PLease enter your age: "))
+has_vip = input("VIP card (yes/no): ")
 
 if age < 16:
-    print('access denied')
-elif (age == 18 and has_vip == 'yes') or (19 <= age < 21):
-    print('access granted')
+    print("access denied")
+elif (age == 18 and has_vip == "yes") or (19 <= age < 21):
+    print("access granted")
 else:
-    print('else')
+    print("else")
 
 # question 4.
 
@@ -49,7 +48,7 @@ if user_input == stored_password:
 elif len(user_input) < 8:
     print("Too short")
 else:
-    print('Wrong password')     
+    print("Wrong password")
 
 
 # question 5.
