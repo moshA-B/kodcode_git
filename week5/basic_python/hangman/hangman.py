@@ -13,9 +13,9 @@ def generate_word():
         "harvest", "spark",
     ]
 
-    random_num = random.randint(0, 19)
+    random_word = random.choice(random_words)
 
-    return random_words[random_num]
+    return random_word
 
 
 # takes a guess input and validates it
