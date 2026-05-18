@@ -57,8 +57,9 @@ def merge_and_sort(lst1, lst2):
 
 #8
 def rotate(lst, k):
-    new = lst[-k :]
-    new2 = lst[0: -k ]
+    k = k % len(lst)
+    new = lst[-k:]
+    new2 = lst[:-k]
     new += new2
     return new
     
