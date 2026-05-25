@@ -49,13 +49,11 @@ def prase_ints(vals):
 #question 6
 
 def set_age(age):
-    try:
-        if 0 > age or age > 150:
-            raise ValueError("ValueError")
-        else:
-            return age
-    except TypeError:
-        return 
+    if 0 > age or age > 150:
+        raise ValueError("ValueError")
+    else:
+        return age
+
     
 #question 7
 
@@ -83,7 +81,7 @@ def count_errors(funcs):
     count = 0
     for f in funcs:
         try:
-            f
+            f()
         except Exception:
             count += 1
 

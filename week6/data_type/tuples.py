@@ -8,7 +8,7 @@ def sum(tpl):
 
 #2
 def max(tpl):
-    count = 0
+    count = tpl[0]
     for i in tpl:
         if i > count:
             count = i
@@ -30,13 +30,11 @@ def reverse(tpl):
         new += (tpl[-i -1],)
     return new
 
-
 #5
 def swap_pairs(tpl):
     new = ()
     for i in range(0,len(tpl)-1,2):
-        a,b = (tpl[i],tpl[i+1])
-        new += (b,a)
+        new += (tpl[i+1],tpl[i])
     return new
 
 
@@ -50,7 +48,6 @@ def min_max(tpl):
         elif i < min:
             min = i
     return min,max
-print(min_max((1,2,3,4,5,6)))
 
 
 #7
@@ -80,5 +77,4 @@ def rotate(tpl, k):
     new += new2
     return new
 
-print(rotate((1,2,3,4,5,6),2))
 

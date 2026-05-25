@@ -7,7 +7,7 @@ def sum(lst):
 
 #2
 def max(lst):
-    max = 0
+    max = lst[0]
     for i in lst:
         if i > max:
             max = i
