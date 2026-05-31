@@ -7,6 +7,9 @@ from circle import Circle
 import logging
 import json
 
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename="shapes_log.log", level=logger.INFO, format='%(asctime)s - %(levelname)s - %(message)s' )
+
 
 def show_menu():
     """Print the primary CLI application menu options to the console."""
@@ -35,6 +38,7 @@ def valid_input_for_shape(prompt=""):
                 return float(num)
             print("please enter a valid number")
         except (ValueError, TypeError):
+            logger.exception("user input invalid")
             print("please enter a valid number")
 
 
@@ -46,6 +50,7 @@ def valid_input_for_menu(prompt=""):
             a = int(choice)
             return choice
         except (ValueError, TypeError):
+            logger.exception("user input invalid")
             print("please enter a valid number")
 
 
@@ -86,7 +91,9 @@ def handle_create_shape(ins, available):
         current_shape = available[chosen_key]
         data = handle_input_for_shapes(current_shape)
         ins.create_shape(current_shape, **data)
+        logger.info("new %s created", chosen_key)
     except KeyError:
+        logger.exception("user input invalid number")
         print("please enter a valid number")
 
 
@@ -107,6 +114,7 @@ def handle_update_shape(ins):
     try:
         new_data = handle_input_for_shapes(current_shape)
         ins.update_shape(id, new_data)
+        logger.info("%s updated",  current_shape)
         print("updated")
         return
     except ValueError as e:
@@ -116,6 +124,7 @@ def handle_update_shape(ins):
 def handle_remove_shape(ins):
     """Prompt for a shape ID and remove the corresponding shape via the manager."""
     id = int(valid_input_for_menu("enter id: "))
+    logger.info("removed s%", id )
     ins.delete_shape(id)
     print("removed")
 
